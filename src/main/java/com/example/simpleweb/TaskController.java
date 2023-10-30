@@ -58,6 +58,15 @@ public class TaskController {
         return "redirect:/";
     }
 
+    @GetMapping("/task/delete/{id}")
+    public String deleteTask(@PathVariable Long id) {
+        Task task = findTaskById(id);
+        if (task != null) {
+            tasks.remove(task);
+        }
+        return "redirect:/";
+    }
+
     private Task findTaskById(Long id) {
         return tasks.stream()
                 .filter(task -> task.getId().equals(id))
