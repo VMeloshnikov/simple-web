@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="htt://www.thymleaf.org" xmlns="http://www.w3.org/1999/html" xmlns:Title="http://www.w3.org/1999/xhtml"
+      xmlns:Description="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Task</title>
+</head>
+<body>
+<h1>Edit Task</h1>
+<form action="/task/edit" method="post">
+    <div>
+        <input type="hidden" name="id"  th:value="$task.title"/>
+    </div>
+    <div>
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" required th:value="$task.title"/>
+    </div>
+    <div>
+        <label for="description">Description:</label>
+        <textarea type="text" id="description" name="description" required th:value="${task.description}"/>
+    </div>
+    <div>
+        <label for="priority">Priority:</label>
+        <input type="number" id="priority" name="priority" required th:value="${task.priority}">
+    </div>
+    <button type="submit">Save</button>
+</form>
+</body>
+</html>
