@@ -1,4 +1,4 @@
-CREATE SCHEMA IF not exists task_schema;
+CREATE SCHEMA IF NOT EXISTS tasks_schema;
 
 CREATE TABLE IF NOT EXISTS tasks_schema.task
 (

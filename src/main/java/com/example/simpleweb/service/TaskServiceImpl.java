@@ -47,4 +47,11 @@ public class TaskServiceImpl implements TaskService {
 
         taskRepository.deleteById(id);
     }
+
+    @Override
+    public void batchInsert(List<Task> tasks) {
+        log.debug("Call batchInsert in TaskServiceImp");
+
+        taskRepository.batchInsert(tasks);
+    }
 }

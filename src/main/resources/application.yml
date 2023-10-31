@@ -5,3 +5,4 @@ spring:
     password: postgres
     hikari:
       schema: tasks_schema
+logging.level.root: DEBUG
